@@ -141,13 +141,13 @@ class OpenAIEvaluator:
         self.true_answer = true_answer
         self.question_asked = question_asked
 
-        api_key = "1dff4ae38d459a133aebfff7250c88e0"
+        api_key = ""
         if (not api_key):
             raise ValueError("NIAH_EVALUATOR_API_KEY must be in env for using openai evaluator.")
 
         self.api_key = api_key
-        REGION = "canadaeast"
-        API_BASE = "http://api.tonggpt.mybigai.ac.cn/proxy"
+        REGION = ""
+        API_BASE = ""
         
         self.evaluator = AzureChatOpenAI(model="gpt-35-turbo-0125",
                                          openai_api_key=self.api_key,
