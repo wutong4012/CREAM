@@ -10,8 +10,7 @@
 ## Updates
 
 - (2024.09.26) Our Paper have been accepted by NeurIPS 2024.
-- (2024.06.11) Paper Release, check it on [Arxiv](https://arxiv.org/pdf/2406.07138).
-- (2024.05.24) Release Code
+- (2024.06.11) Paper Release on [Arxiv](https://arxiv.org/pdf/2406.07138).
 
 ## 🚀 Overview
 
@@ -33,11 +32,12 @@ git clone git@github.com:wutong4012/CREAM.git
 cd CREAM
 
 # create conda environment
-conda create -n cream python=3.10
+conda create -n cream python=3.9
 conda activate cream
 
 # install requirements
 pip install -r requirements.txt
+pip install flash_attn-2.6.3+cu123torch2.2cxx11abiFALSE-cp39-cp39-linux_x86_64.whl
 
 ```
 
@@ -58,18 +58,13 @@ Evaluate model
 ```bash
 bash scripts/eval_longchat_lines.sh 8 linear llama2 CREAM 1000
 
-
 bash scripts/eval_lost_in_the_middle.sh 8 linear llama2 CREAM 1000
-
 
 bash scripts/eval_needle.sh 8 linear llama2_chat CREAM 100
 
-
 bash scripts/eval_longbench.sh 8 linear llama2_chat CREAM 100
 
-
 bash scripts/eval_ppl.sh 8 linear llama2 CREAM 1000
-
 
 bash scripts/eval_long_ppl.sh 64 linear llama2 CREAM 1000
 ```
