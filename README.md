@@ -1,24 +1,21 @@
 <div align="center">
 
-# Never Miss A Beat: An Efficient Recipe for Context Window Extension of Large Language Models with Consistent “Middle” Enhancement
+# Never Miss A Beat: Efficient Long Context Extension via Middle-Focused Positional Encoding
 
-<a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
-<a href="https://huggingface.co/docs/transformers/index/"><img alt="Lightning" src="https://img.shields.io/badge/-Transformers-ffd21e?logo=huggingface&logoColor=white"></a>
-
-<!-- [![Paper](http://img.shields.io/badge/paper-arxiv.2402.16050-B31B1B.svg)](https://arxiv.org/abs/2402.16050) -->
-
-<!-- [![Conference](http://img.shields.io/badge/AnyConference-year-4b44ce.svg)](https://xxx) -->
+[![arXiv](https://img.shields.io/badge/arXiv-2406.07138-b31b1b.svg)](https://arxiv.org/abs/2406.07138)
+[![Conference](http://img.shields.io/badge/NeurIPS-2024-4b44ce.svg)](https://nips.cc/Conferences/2024)
 
 </div>
 
 ## Updates
 
-<!-- - (2024.02.27) Paper Release, check it on [Arxiv](https://arxiv.org/pdf/2402.16050.pdf).  -->
-- (2024.05.24) Initial Release
+- (2024.09.26) Our Paper have been accepted by NeurIPS 2024.
+- (2024.06.11) Paper Release, check it on [Arxiv](https://arxiv.org/pdf/2406.07138).
+- (2024.05.24) Release Code
 
-## Overview
+## 🚀 Overview
 
-we propose **C**ontinuity-**R**elativity ind**E**xing with g**A**ussian **M**iddle (CREAM), which interpolates positional encodings by manipulating position indices. 
+We propose **C**ontinuity-**R**elativity ind**E**xing with g**A**ussian **M**iddle (**CREAM**), which interpolates positional encodings by manipulating position indices. 
 
 Apart from being simple, CREAM is training-efficient: it only requires fine-tuning at the pre-trained context window (e.g., Llama 2-4K) and can extend LLMs to a much longer target context length (e.g., 256K). 
 
@@ -28,7 +25,7 @@ Experimental results show that CREAM successfully extends LLMs to the target len
 
 <img src='img/framework.png'>
 
-## Installation
+## ⚙️ Installation
 
 ```bash
 # clone project
@@ -36,21 +33,17 @@ git clone git@github.com:wutong4012/CREAM.git
 cd CREAM
 
 # create conda environment
-conda create -n CREAM
-conda activate CREAM
+conda create -n cream python=3.10
+conda activate cream
 
 # install requirements
 pip install -r requirements.txt
 
 ```
 
-## Data Preparation
+## 💡 How to run
 
-You can download all the finetune data and evaluation data from [Video-LLaVA/DATA]()
-
-## How to run
-
-*Our training framework offers tailored scripts to meet the diverse needs of researchers.*
+You can download all the finetune data and evaluation data from []()
 
 Train model
 
@@ -81,21 +74,21 @@ bash scripts/eval_ppl.sh 8 linear llama2 CREAM 1000
 bash scripts/eval_long_ppl.sh 64 linear llama2 CREAM 1000
 ```
 
-## Evaluation Results
+## ⚽ Evaluation Results
 
-*LongChat-Lines*
+***LongChat-Lines***
 
 <img src='img/longchat-lines.png'>
 
-*Lost in the Middle*
+***Lost in the Middle***
 
 <img src='img/lost-in-the-middle.png'>
 
-*Needle in a Haystack*
+***Needle in a Haystack***
 
 <img src='img/needle.png'>
 
-*LongBench*
+***LongBench***
 
 <img src='img/longbench1.png'>
 <img src='img/longbench2.png'>
@@ -109,8 +102,18 @@ Data / Code:
 - [Needle in a Haystack](https://github.com/gkamradt/LLMTest_NeedleInAHaystack)
 - [LongBench](https://github.com/THUDM/LongBench)
 
-## Citation
+## 📜 Citation
 
-```
+Please cite our paper if you use [CREAM](https://arxiv.org/abs/2305.09515) in your work:
 
+```bibtex
+@misc{wu2024missbeatefficientrecipe,
+      title={Never Miss A Beat: An Efficient Recipe for Context Window Extension of Large Language Models with Consistent "Middle" Enhancement}, 
+      author={Tong Wu and Yanpeng Zhao and Zilong Zheng},
+      year={2024},
+      eprint={2406.07138},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2406.07138}, 
+}
 ```
