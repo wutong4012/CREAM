@@ -43,7 +43,7 @@ pip install flash_attn-2.6.3+cu123torch2.2cxx11abiFALSE-cp39-cp39-linux_x86_64.w
 
 ## 💡 How to run
 
-You can download all the finetune data and evaluation data from []()
+You can download all the finetune data and evaluation data from [huggingface](https://huggingface.co/victor-wu)
 
 Train model
 
